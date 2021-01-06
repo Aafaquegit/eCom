@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="88dp"
         android:layout_marginRight="88dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="150dp"
         android:text="Find, discover, choose and buy anything ...."
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
