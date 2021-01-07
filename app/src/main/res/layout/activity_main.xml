@@ -27,6 +27,7 @@
         android:layout_marginTop="150dp"
         android:text="Find, discover, choose and buy anything ...."
         android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:textColor="@color/colorPrimary"
         android:textSize="22sp"
         android:textStyle="bold|italic" />
