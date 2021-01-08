@@ -124,7 +124,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="550dp"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginLeft="80dp"
         android:layout_marginStart="25dp"
