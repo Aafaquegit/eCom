@@ -9,4 +9,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/colorAccent</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.ECom.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ECom.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ECom.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
