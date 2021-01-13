@@ -100,8 +100,17 @@ public class HomeActivity extends AppCompatActivity
             protected void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i, @NonNull Products model) {
                 productViewHolder.txtProductName.setText(model.getPname());
                 productViewHolder.txtProductDescription.setText(model.getDescription());
-                productViewHolder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                productViewHolder.txtProductPrice.setText("Price = Rs." + model.getPrice());
                 Picasso.get().load(model.getImage()).into(productViewHolder.imageView);
+
+                productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("pid", model.getPid());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull
