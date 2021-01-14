@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECom"
         tools:replace="android:theme">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".CartActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SettingsActivity" />
         <activity
