@@ -2,7 +2,6 @@ package com.example.ecom;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +14,6 @@ import com.example.ecom.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,13 +22,13 @@ import com.squareup.picasso.Picasso;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import Admin.AdminMaintainProductsActivity;
 import Model.Products;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
@@ -69,8 +67,11 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-                startActivity(intent);
+                if(!type.equals("Admin"))
+                {
+                    Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -188,31 +189,46 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_cart)
         {
-            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
-            startActivity(intent);
+            if(!type.equals("Admin"))
+            {
+                Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
         }
         else if (id == R.id.nav_search)
         {
-            Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
-            startActivity(intent);
+            if(!type.equals("Admin"))
+            {
+                Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
+                startActivity(intent);
+            }
         }
         else if (id == R.id.nav_categories)
         {
+            if(!type.equals("Admin"))
+            {
 
+            }
         }
         else if (id == R.id.nav_settings)
         {
-            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-            startActivity(intent);
+            if(!type.equals("Admin"))
+            {
+                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
         }
         else if (id == R.id.nav_logout)
         {
-            Paper.book().destroy();
+            if(!type.equals("Admin"))
+            {
+                Paper.book().destroy();
 
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

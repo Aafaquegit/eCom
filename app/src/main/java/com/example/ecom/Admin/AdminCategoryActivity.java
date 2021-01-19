@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import Admin.AdminAddNewProductActivity;
+
 public class AdminCategoryActivity extends AppCompatActivity {
 
     private ImageView tshirts, sportsTshirts, femaleDresses, sweathers;

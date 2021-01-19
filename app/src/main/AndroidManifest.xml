@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECom"
         tools:replace="android:theme">
-        <activity android:name=".AdminMaintainProductsActivity"></activity>
+        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity android:name="Admin.AdminMaintainProductsActivity" />
         <activity android:name=".SearchProductsActivity" />
         <activity android:name=".AdminUserProductsActivity" />
         <activity android:name=".AdminNewOrdersActivity" />
@@ -27,7 +28,7 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ECom.NoActionBar" />
         <activity android:name=".AdminCategoryActivity" />
-        <activity android:name=".AdminAddNewProductActivity" />
+        <activity android:name="Admin.AdminAddNewProductActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
