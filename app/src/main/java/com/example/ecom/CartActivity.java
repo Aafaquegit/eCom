@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +51,7 @@ public class CartActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
 
         NextProcessBtn = (Button) findViewById(R.id.next_btn);
-        txttotalAmount = (TextView)findViewById(R.id.total_price);
+        txttotalAmount = (TextView)findViewById(R.id.page_title);
         txtMsg1 = (TextView)findViewById(R.id.msg1);
 
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
