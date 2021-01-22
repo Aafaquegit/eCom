@@ -1,4 +1,4 @@
-package com.example.ecom;
+package com.example.ecom.Buyers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,12 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.ecom.Admin.AdminMaintainProductsActivity;
 import com.example.ecom.Buyers.MainActivity;
 import com.example.ecom.Prevalent.Prevalent;
+
+import com.example.ecom.R;
+
 import com.example.ecom.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,8 +32,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import Admin.AdminMaintainProductsActivity;
 import Model.Products;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;

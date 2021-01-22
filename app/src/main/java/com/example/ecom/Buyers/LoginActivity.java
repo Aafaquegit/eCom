@@ -1,4 +1,4 @@
-package com.example.ecom;
+package com.example.ecom.Buyers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.ecom.Admin.AdminCategoryActivity;
+import com.example.ecom.R;
 
 import com.rey.material.widget.CheckBox;
 import android.widget.EditText;
@@ -140,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
                             {
                                 Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this, com.example.ecom.AdminCategoryActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
                             }
                             else if(parentDbName.equals("Users"))

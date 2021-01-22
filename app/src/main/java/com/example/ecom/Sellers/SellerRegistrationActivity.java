@@ -12,9 +12,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.ecom.Buyers.MainActivity;
-import com.example.ecom.LoginActivity;
+
 import com.example.ecom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -68,11 +69,11 @@ public class SellerRegistrationActivity extends AppCompatActivity
 
     private void registerSeller()
     {
-        String name = nameInput.getText().toString();
-        String phone = phoneInput.getText().toString();
-        String email = emailInput.getText().toString();
+        final String name = nameInput.getText().toString();
+        final String phone = phoneInput.getText().toString();
+        final String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
-        String address = addressInput.getText().toString();
+        final String address = addressInput.getText().toString();
 
         if(!name.equals("") && !phone.equals("") && !email.equals("") && !password.equals("") && !address.equals(""))
         {
@@ -82,24 +83,29 @@ public class SellerRegistrationActivity extends AppCompatActivity
             loadingBar.show();
 
             mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>()
+                    {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful())
+                        public void onComplete(@NonNull Task<AuthResult> task)
+                        {
+                            if (task.isSuccessful())
                             {
-                                final DatabaseReference rootRef;
+//                                Toast.makeText(SellerRegistrationActivity.this, "Account created.", Toast.LENGTH_SHORT).show();
+//                                loadingBar.dismiss();
+
+                               final DatabaseReference rootRef;
                                 rootRef = FirebaseDatabase.getInstance().getReference();
 
-                                String uid = mAuth.getCurrentUser().getUid();
+                                String sid = mAuth.getCurrentUser().getUid();
 
                                 HashMap<String, Object> sellerMap = new HashMap<>();
-                                sellerMap.put("uid", uid);
+                                sellerMap.put("sid", sid);
                                 sellerMap.put("phone", phone);
                                 sellerMap.put("email", email);
                                 sellerMap.put("address", address);
                                 sellerMap.put("name", name);
 
-                                rootRef.child("Sellers").child(uid).updateChildren(sellerMap)
+                                rootRef.child("Sellers").child(sid).updateChildren(sellerMap)
                                         .addOnCompleteListener(new OnCompleteListener<Void>()
                                         {
                                             @Override
@@ -114,6 +120,11 @@ public class SellerRegistrationActivity extends AppCompatActivity
                                                 finish();
                                             }
                                         });
+                            }
+                            else
+                            {
+                                Toast.makeText(SellerRegistrationActivity.this, "Account cannot be created.", Toast.LENGTH_SHORT).show();
+                                loadingBar.dismiss();
                             }
                         }
                     });
