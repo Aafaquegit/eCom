@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.AdminNewOrdersActivity">
+    tools:context=".Admin.AdminCheckNewProductsActivity">
 
     <RelativeLayout
-        android:id="@+id/r2"
+        android:id="@+id/r3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
@@ -17,9 +18,9 @@
             android:id="@+id/page_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Orders"
+            android:text="Approve New Products"
             android:textColor="@android:color/white"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textAlignment="center"
             android:gravity="center_horizontal"
             android:layout_marginTop="10dp"/>
@@ -27,10 +28,10 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/admin_products_checklist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/orders_list"
-        android:layout_below="@+id/r2">
+        android:layout_below="@+id/r3">
 
     </androidx.recyclerview.widget.RecyclerView>
 

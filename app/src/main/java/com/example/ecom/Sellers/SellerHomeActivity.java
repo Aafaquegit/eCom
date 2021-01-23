@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.ecom.Sellers.SellerProductCategoryActivity;
 import com.example.ecom.Buyers.MainActivity;
 import com.example.ecom.R;
 import com.example.ecom.Sellers.ui.dashboard.DashboardFragment;
@@ -51,7 +52,8 @@ public class SellerHomeActivity extends AppCompatActivity
                         break;
 
                     case R.id.navigation_add:
-                        mTextMessage.setText(R.string.title_dashboard);
+                        Intent intentCate = new Intent(SellerHomeActivity.this, SellerProductCategoryActivity.class);
+                        startActivity(intentCate);
                         break;
 
                     case R.id.navigation_logout:
@@ -59,9 +61,9 @@ public class SellerHomeActivity extends AppCompatActivity
                         mAuth = FirebaseAuth.getInstance();
                         mAuth.signOut();
 
-                        Intent intent = new Intent(SellerHomeActivity.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
+                        Intent intentMain = new Intent(SellerHomeActivity.this, MainActivity.class);
+                        intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentMain);
                         finish();
 
                         break;
