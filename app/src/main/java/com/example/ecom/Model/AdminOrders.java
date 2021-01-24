@@ -1,4 +1,4 @@
-package Model;
+package com.example.ecom.Model;
 
 public class AdminOrders
 {

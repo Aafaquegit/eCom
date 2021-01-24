@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.ecom.Admin.AdminMaintainProductsActivity;
 import com.example.ecom.Buyers.MainActivity;
+import com.example.ecom.Model.Products;
 import com.example.ecom.Prevalent.Prevalent;
 
 import com.example.ecom.R;
@@ -32,7 +33,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import Model.Products;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 

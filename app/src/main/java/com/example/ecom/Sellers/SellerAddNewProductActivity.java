@@ -36,7 +36,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class SellerAddNewProductActivity extends AppCompatActivity {
+public class SellerAddNewProductActivity extends AppCompatActivity
+{
 
     private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
     private Button AddNewProductButton;
@@ -152,7 +153,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
     private void StoreProductInformation() {
         loadingBar.setTitle("Add New Product");
-        loadingBar.setMessage("Dear Admin, please wait, while we are adding the new product.");
+        loadingBar.setMessage("Dear Seller, please wait, while we are adding the new product.");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
@@ -162,7 +163,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
         saveCurrentDate = currentDate.format((calendar).getTime());
 
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentDate.format((calendar).getTime());
+        saveCurrentTime = currentTime.format((calendar).getTime());
 
         productRandomKey = saveCurrentDate + saveCurrentTime;
         StorageReference filePath = ProductImageRef.child(ImageUri.getLastPathSegment() + productRandomKey);

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ecom.Model.Cart;
 import com.example.ecom.R;
 import com.example.ecom.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -16,7 +17,6 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import Model.Cart;
 
 public class AdminUserProductsActivity extends AppCompatActivity {
 

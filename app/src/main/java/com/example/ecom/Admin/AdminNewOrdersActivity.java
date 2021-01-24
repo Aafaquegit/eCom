@@ -16,13 +16,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.ecom.Model.AdminOrders;
 import com.example.ecom.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import Model.AdminOrders;
 
 public class AdminNewOrdersActivity extends AppCompatActivity {
 

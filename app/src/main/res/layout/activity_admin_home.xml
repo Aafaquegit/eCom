@@ -59,7 +59,7 @@
         android:background="@color/colorPrimaryDark"
         android:text="Check and Approve New Products"
         android:textColor="@android:color/white"
-        android:textSize="19dp"
+        android:textSize="17dp"
         android:textAllCaps="false"/>
 
     <Button

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.ecom.Model.Products;
 import com.example.ecom.Prevalent.Prevalent;
 import com.example.ecom.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,7 +29,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import Model.Products;
 
 public class ProductDetailsActivity extends AppCompatActivity
 {
